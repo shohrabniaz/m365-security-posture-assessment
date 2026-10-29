@@ -1,0 +1,50 @@
+﻿{
+    "ControlFamily":  "Audit logging, mailbox forwarding, risky sign-in",
+    "Mode":  "Synthetic",
+    "Organisation":  "Coastal Managed IT (CMIT) — fictional SME case",
+    "CollectedUtc":  "2026-10-29T14:53:03.8555490Z",
+    "GuidanceRefs":  [
+                         "Microsoft: Turn on mailbox auditing / unified audit log",
+                         "Microsoft: Detect and remediate external mailbox forwarding",
+                         "Microsoft Entra ID Protection / risky sign-ins (licence-dependent)",
+                         "ASD: Logging and monitoring guidance for identity"
+                     ],
+    "Items":  [
+                  {
+                      "Id":  "AUD-01",
+                      "Title":  "Unified audit log enabled",
+                      "Observed":  "Audit logging assumed enabled (default in modern tenants) but retention and review process not evidenced",
+                      "Severity":  "Medium",
+                      "Score":  55,
+                      "MaxScore":  100,
+                      "EvidenceNote":  "Synthetic — process gap, not a claimed portal screenshot"
+                  },
+                  {
+                      "Id":  "FWD-01",
+                      "Title":  "External mailbox forwarding",
+                      "Observed":  "No automated weekly scan of inbox rules / forwarding SMTP in place",
+                      "Severity":  "High",
+                      "Score":  25,
+                      "MaxScore":  100,
+                      "EvidenceNote":  "Synthetic — recommend Transport Rule alert + monthly export"
+                  },
+                  {
+                      "Id":  "RSK-01",
+                      "Title":  "Risky sign-in detection",
+                      "Observed":  "Entra ID Protection / risk-based CA NotAvailable on Free tier",
+                      "Severity":  "High",
+                      "Score":  0,
+                      "MaxScore":  100,
+                      "EvidenceNote":  "Honest Free-tier limit — do not claim Identity Protection"
+                  },
+                  {
+                      "Id":  "RSK-02",
+                      "Title":  "Sign-in log review cadence",
+                      "Observed":  "No documented weekly review of failed/unusual sign-ins",
+                      "Severity":  "Medium",
+                      "Score":  40,
+                      "MaxScore":  100,
+                      "EvidenceNote":  "Synthetic governance gap"
+                  }
+              ]
+}

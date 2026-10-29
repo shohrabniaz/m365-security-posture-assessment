@@ -1,0 +1,135 @@
+﻿{
+    "Organisation":  "Coastal Managed IT (CMIT) — fictional SME case",
+    "GeneratedUtc":  "2026-10-29T14:53:03.9272231Z",
+    "Mode":  "Synthetic",
+    "ControlCount":  11,
+    "AggregateScore":  350,
+    "AggregateMax":  1100,
+    "PosturePercent":  31.8,
+    "RiskBand":  "Elevated — remediation plan required",
+    "SeverityCounts":  {
+                           "Low":  0,
+                           "Critical":  1,
+                           "Medium":  5,
+                           "High":  5
+                       },
+    "Findings":  [
+                     {
+                         "Family":  "Audit logging, mailbox forwarding, risky sign-in",
+                         "Mode":  "Synthetic",
+                         "Id":  "AUD-01",
+                         "Title":  "Unified audit log enabled",
+                         "Severity":  "Medium",
+                         "Score":  55,
+                         "MaxScore":  100,
+                         "Observed":  "Audit logging assumed enabled (default in modern tenants) but retention and review process not evidenced"
+                     },
+                     {
+                         "Family":  "Audit logging, mailbox forwarding, risky sign-in",
+                         "Mode":  "Synthetic",
+                         "Id":  "FWD-01",
+                         "Title":  "External mailbox forwarding",
+                         "Severity":  "High",
+                         "Score":  25,
+                         "MaxScore":  100,
+                         "Observed":  "No automated weekly scan of inbox rules / forwarding SMTP in place"
+                     },
+                     {
+                         "Family":  "Audit logging, mailbox forwarding, risky sign-in",
+                         "Mode":  "Synthetic",
+                         "Id":  "RSK-01",
+                         "Title":  "Risky sign-in detection",
+                         "Severity":  "High",
+                         "Score":  0,
+                         "MaxScore":  100,
+                         "Observed":  "Entra ID Protection / risk-based CA NotAvailable on Free tier"
+                     },
+                     {
+                         "Family":  "Audit logging, mailbox forwarding, risky sign-in",
+                         "Mode":  "Synthetic",
+                         "Id":  "RSK-02",
+                         "Title":  "Sign-in log review cadence",
+                         "Severity":  "Medium",
+                         "Score":  40,
+                         "MaxScore":  100,
+                         "Observed":  "No documented weekly review of failed/unusual sign-ins"
+                     },
+                     {
+                         "Family":  "Admin accounts and guest access",
+                         "Mode":  "Synthetic",
+                         "Id":  "ADM-01",
+                         "Title":  "Standing privileged group membership",
+                         "Severity":  "Critical",
+                         "Score":  10,
+                         "MaxScore":  100,
+                         "Observed":  "Modelled privileged security group includes a disabled orphan account (leaver residual) — pattern carried from prior JML lab narrative"
+                     },
+                     {
+                         "Family":  "Admin accounts and guest access",
+                         "Mode":  "Synthetic",
+                         "Id":  "ADM-02",
+                         "Title":  "Number of Global Administrators",
+                         "Severity":  "High",
+                         "Score":  30,
+                         "MaxScore":  100,
+                         "Observed":  "More than two standing Global Admin equivalents modelled (break-glass + day-to-day overlap)"
+                     },
+                     {
+                         "Family":  "Admin accounts and guest access",
+                         "Mode":  "Synthetic",
+                         "Id":  "GST-01",
+                         "Title":  "Guest user inventory",
+                         "Severity":  "Medium",
+                         "Score":  45,
+                         "MaxScore":  100,
+                         "Observed":  "Guests present without periodic access review"
+                     },
+                     {
+                         "Family":  "Admin accounts and guest access",
+                         "Mode":  "Synthetic",
+                         "Id":  "GST-02",
+                         "Title":  "Guest invitation settings",
+                         "Severity":  "Medium",
+                         "Score":  50,
+                         "MaxScore":  100,
+                         "Observed":  "Members can invite guests (default-like posture)"
+                     },
+                     {
+                         "Family":  "MFA / authentication strength",
+                         "Mode":  "Synthetic",
+                         "Id":  "MFA-01",
+                         "Title":  "MFA for privileged roles",
+                         "Severity":  "High",
+                         "Score":  20,
+                         "MaxScore":  100,
+                         "Observed":  "Global Admin and Privileged Role Admin modelled without enforced phishing-resistant MFA on Free tier"
+                     },
+                     {
+                         "Family":  "MFA / authentication strength",
+                         "Mode":  "Synthetic",
+                         "Id":  "MFA-02",
+                         "Title":  "MFA for standard users",
+                         "Severity":  "High",
+                         "Score":  35,
+                         "MaxScore":  100,
+                         "Observed":  "Per-user MFA not consistently enabled for all modelled cloud users"
+                     },
+                     {
+                         "Family":  "MFA / authentication strength",
+                         "Mode":  "Synthetic",
+                         "Id":  "MFA-03",
+                         "Title":  "Legacy authentication",
+                         "Severity":  "Medium",
+                         "Score":  40,
+                         "MaxScore":  100,
+                         "Observed":  "Legacy auth protocols assumed still possible without CA block"
+                     }
+                 ],
+    "RemediationTop5":  [
+                            "Remove disabled accounts from privileged groups; verify leavers weekly.",
+                            "Enforce MFA for all admins; prefer phishing-resistant methods where licensed.",
+                            "Reduce standing Global Admins; use break-glass + time-boxed elevation (see JIT pilot).",
+                            "Scan for external forwarding and inbox rules; alert on new rules.",
+                            "Document Free-tier limits: no CA / ID Protection — do not claim those controls."
+                        ]
+}

@@ -1,0 +1,40 @@
+﻿{
+    "ControlFamily":  "MFA / authentication strength",
+    "Mode":  "Synthetic",
+    "Organisation":  "Coastal Managed IT (CMIT) — fictional SME case",
+    "CollectedUtc":  "2026-10-29T14:53:03.7636346Z",
+    "GuidanceRefs":  [
+                         "Microsoft: Require MFA for all users (Secure Score / identity recommendations)",
+                         "ASD Essential Eight: Multi-factor authentication",
+                         "CIS Microsoft 365 Foundations Benchmark — MFA controls"
+                     ],
+    "Items":  [
+                  {
+                      "Id":  "MFA-01",
+                      "Title":  "MFA for privileged roles",
+                      "Observed":  "Global Admin and Privileged Role Admin modelled without enforced phishing-resistant MFA on Free tier",
+                      "Severity":  "High",
+                      "Score":  20,
+                      "MaxScore":  100,
+                      "EvidenceNote":  "Synthetic — Entra ID Free cannot claim Conditional Access MFA policies"
+                  },
+                  {
+                      "Id":  "MFA-02",
+                      "Title":  "MFA for standard users",
+                      "Observed":  "Per-user MFA not consistently enabled for all modelled cloud users",
+                      "Severity":  "High",
+                      "Score":  35,
+                      "MaxScore":  100,
+                      "EvidenceNote":  "Synthetic baseline for CMIT ~60-user estate"
+                  },
+                  {
+                      "Id":  "MFA-03",
+                      "Title":  "Legacy authentication",
+                      "Observed":  "Legacy auth protocols assumed still possible without CA block",
+                      "Severity":  "Medium",
+                      "Score":  40,
+                      "MaxScore":  100,
+                      "EvidenceNote":  "Synthetic — Free tier has no Conditional Access to block legacy auth"
+                  }
+              ]
+}
