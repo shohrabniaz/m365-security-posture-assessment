@@ -6,3 +6,6 @@ Thumbs.db
 _tmp/
 .env
 *.tmp
+.batch_built
+Speaker_Only/
+.sixth/
